@@ -53,34 +53,3 @@ app.get("*", (req, res) => {
 app.listen(port, () => {
     console.log('Server is running on local port 9000')
 })
-
-//////
-
-// // ... other imports 
-// const path = require("path")
-
-// // ... other app.use middleware 
-// app.use(express.static(path.join(__dirname, "client", "build")))
-
-// // ...
-// // Right before your app.listen(), add this:
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-// });
-
-
-//////
-
-
-
-
-// BASIC USAGE FOR JWT
-// Basic usage using an HS256 secret:
-// var jwt = require('express-jwt');
- 
-// app.get('/protected',
-//   jwt({ secret: 'shhhhhhared-secret' }),
-//   function(req, res) {
-//     if (!req.user.admin) return res.sendStatus(401);
-//     res.sendStatus(200);
-// });
