@@ -9,7 +9,7 @@ function App() {
   let [showAdd, setShowAdd] = useState(false)
   
   function getEmployees() {
-    axios.get('/employees')
+    axios.get('/api/employees')
     .then(response => {
       setEmployees(() => {
           return response.data.map(employee => {
@@ -66,7 +66,7 @@ function App() {
           return 
         }
         
-      axios.post('/employees', {
+      axios.post('/api/employees', {
         firstName: newEmployee.firstName, 
         lastName: newEmployee.lastName, 
         email: newEmployee.email, 
@@ -93,7 +93,7 @@ function App() {
         || !employee.phone
       ) return 
 
-      axios.put(`/employees/${employee._id}`, employee)
+      axios.put(`/api/employees/${employee._id}`, employee)
         .then(response => {
 
           getEmployees()
@@ -138,7 +138,7 @@ function App() {
     }
 
     function deleteEmployee(e, _id) {
-      axios.delete(`/employees/${_id}`)
+      axios.delete(`/api/employees/${_id}`)
         .then(() => {
           getEmployees()
         })

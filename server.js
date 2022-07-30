@@ -31,7 +31,7 @@ mongoose.connect(
     () => console.log('Connected to the DB')
 )
 
-app.use('/employees', require('./routes/employeeRouter'))
+app.use('/api/employees', require('./routes/employeeRouter'))
 
 app.use((err, req, res, next) => {
     console.log(err)
